@@ -2,7 +2,7 @@
 
 A lightweight, responsive web application for tracking **Uposatha Days** (observance days) and lunar dates. This tool is designed for practitioners to easily stay aligned with the Buddhist calendar, featuring a clean UI and integrated Dhammapada verses.
 
-<img width="745" height="563" alt="image" src="https://github.com/user-attachments/assets/4592666a-f063-486d-93be-b68181b06a3c" />
+<img width="1033" height="890" alt="_E__loicuaducphat_congcu_uposatha-calendar html (1)" src="https://github.com/user-attachments/assets/4cfd03d8-ec5d-4466-a21d-fac41d9cb27f" />
 
 ### 🚀 How to Start
 This application is hosted online and can be accessed directly by clicking the link: [loicuaducphat.org/congcu/uposatha-calendar](https://loicuaducphat.org/congcu/uposatha-calendar). It is compatible with any modern web browser (Chrome, Firefox, Edge, Safari).
