@@ -5,7 +5,7 @@ A lightweight, responsive web application for tracking **Uposatha Days** (observ
 <img width="745" height="563" alt="image" src="https://github.com/user-attachments/assets/4592666a-f063-486d-93be-b68181b06a3c" />
 
 ### 🚀 How to Start
-This application is hosted online and can be accessed directly by clicking the link: [loicuaducphat.org/congcu/patimokkha-memorize](https://loicuaducphat.org/congcu/patimokkha-memorize). It is compatible with any modern web browser (Chrome, Firefox, Edge, Safari).
+This application is hosted online and can be accessed directly by clicking the link: [loicuaducphat.org/congcu/uposatha-calendar](https://loicuaducphat.org/congcu/uposatha-calendar). It is compatible with any modern web browser (Chrome, Firefox, Edge, Safari).
 ## ✨ Features
 
 * **Lunar-Solar Integration:** Accurately calculates lunar dates alongside the standard Gregorian calendar.
