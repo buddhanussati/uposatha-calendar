@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi" light-mode="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="./images/favicon4.ico">
+<link rel="apple-touch-icon" href="./images/icon-192-upo.png">
+<link rel="stylesheet" href="./css/w3.css">
+<link href="./css/weather-icons.min.css" rel="stylesheet">
+<link href="./css/css.css" rel="stylesheet">
+<link href="./css/css4.css" rel="stylesheet">
+  <title>Uposatha Calendar</title>
+<script>
+function toggleMode() {
+      const body = document.body;
+      const isDark = body.getAttribute("light-mode") === "dark";
+      body.setAttribute("light-mode", isDark ? "light" : "dark");
+      localStorage.setItem("theme", isDark ? "light" : "dark");
+      document.getElementById("modeToggle").innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun-bright"></i>';
+    }
+
+    window.onload = function() {
+      const saved = localStorage.getItem("theme") || "light";
+      document.body.setAttribute("light-mode", saved);
+      document.getElementById("modeToggle").innerHTML = saved === "dark" ? '<i class="fas fa-sun-bright"></i>' : '<i class="fas fa-moon"></i>';
+    };
+</script>
+
+
+<button id="modeToggle" class="today-btn" onclick="toggleMode()"><i class="fas fa-moon"></i>/<i class="fas fa-sun-bright"></i></button>
+
+
+
+<body>
+<div class="w3-responsive bwcontainer4" style="margin-top:5px;">
+  <h3 style="text-align:center; margin-bottom:16px; font-weight:bold;"><i style="font-size:19px; font-weight:normal;" class="far fa-dharmachakra"></i>
+    Uposatha Calendar
+    <i style="font-size:19px; font-weight:normal;" class="far fa-dharmachakra"></i>
+  </h3>
+  <div id="calendar"></div>
+  <div class="legend" style="text-align:center; margin-top:12px;">
+  
+      <button class="toda-btn" title="Next Month" onclick="prevMonth()"><i class="fas fa-caret-left"></i></button>
+
+<button class="today-btn" onclick="goToday()">
+  Next Uposatha Day:
+</button>      <button class="toda-btn" title="Previous Month" onclick="nextMonth()"><i class="fas fa-caret-right"></i></button>
+
+
+</div>
+
+
+  <div class="legend" style="text-align:center; margin-top:12px;">
+  <form name="SelectMonth" style="display:inline;">
+    Month
+    <select name="month">
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+      <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+      <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+    </select>
+     Year
+<input name="year" type="number" size="3" min="1800" max="2199" step="1">
+<input class="today-btn" type="button" value="View"
+       onclick="viewMonth(parseInt(month.value), parseInt(year.value));">
+  </form>
+</div>
+
+<br>
+</div>
+<div id="phapcu-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.82); 
+     z-index:9999; justify-content:center; align-items:center; padding:16px; backdrop-filter:blur(6px);">
+  <div style="background:#fff; color:#222; border-radius:18px; max-width:560px; width:100%; 
+              padding:36px 28px; box-shadow:0 25px 70px rgba(0,0,0,0.5); position:relative; 
+              font-family:Tahoma,Helvetica,Arial,sans-serif; line-height:1.9; text-align:center;">
+    <button onclick="this.closest('#phapcu-modal').style.display='none'" 
+            style="position:absolute; top:12px; right:18px; background:none; border:none; 
+                   font-size:38px; cursor:pointer; color:#aaa; line-height:1;">×</button>
+    <div id="phapcu-content" style="font-size:19px;"></div>
+  </div>
+</div>
+
+
+<script src="./js/amlich-hnd.js"></script>
+<script src="./js/uposatha2.js"></script>
+
+</body>
+</html>
