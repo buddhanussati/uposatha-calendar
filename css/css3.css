@@ -1,0 +1,337 @@
+/* Mặc định sáng */
+body[light-mode=light] {
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+/* Tối */
+body[light-mode=dark] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+#calendar table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  table-layout: fixed;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#calendar table {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+#calendar th, #calendar td {
+  border: 1px solid #b8a98f;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  height: 60px;
+  font-size: 15px;
+  position: relative;
+}
+
+#calendar th {
+  background-color: #7b5e57;
+  color: #fff;
+}
+
+#calendar td {
+  background-color: #fffefc;
+  transition: background 0.2s;
+}
+
+#calendar td:hover {
+  background-color: #f5f0e6;
+}
+
+/* Make the cell the positioning context and align content */
+#calendar td.cell {
+aspect-ratio: 1 / 1;
+  position: relative;
+  text-align: left;        /* number at top-left instead of centered */
+  vertical-align: top;     /* avoid vertical centering */
+  padding: 6px 6px 18px 6px;  /* extra bottom padding so lunar doesn't overlap */
+}
+
+/* Pin lunar to the true bottom-right */
+#calendar td.cell .lunar {
+  position: absolute;
+  right: 4px;
+  bottom: 1px;
+  font-size: 0.75em;
+  color: #6b5e4f;
+  
+}
+
+
+#calendar td.uposatha {
+  background-color: #e8d9b5 !important;
+  font-weight: bold;
+  
+}
+#calendar td.today {
+  background-color: #c9d6c3 !important;
+  font-weight: bold;
+}
+#calendar .nav-btn {
+  background: none;          /* no background */
+  border: 1px solid #888;    /* subtle border */
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: inherit;            /* inherit text color from header */
+}
+
+#calendar .nav-btn:hover {
+  background: #ddd;          /* light hover effect */
+  color: #000;               /* darker text on hover */
+}
+
+/* Dark mode version */
+[light-mode=dark] #calendar .nav-btn {
+  border: 1px solid #666;
+  color: #e0e0e0;
+}
+
+[light-mode=dark] #calendar .nav-btn:hover {
+  background: #333;
+  color: #ffd27f;            /* highlight on hover in dark mode */
+}
+
+.legend {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .legend span {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid #444;
+      margin: 0 6px;
+      border-radius: 4px;
+    }
+
+ .legend .uposatha {
+      background-color: #e8d9b5;
+    }
+
+    .legend .today {
+      background-color: #c9d6c3;}
+/* Dark mode calendar */
+[light-mode=dark] #calendar table {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.15);
+}
+
+[light-mode=dark] #calendar th,
+[light-mode=dark] #calendar td {
+  border: 1px solid #444;
+  color: #e0e0e0;
+}
+
+[light-mode=dark] #calendar th {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+[light-mode=dark] #calendar td {
+  background-color: #222;
+}
+
+[light-mode=dark] #calendar td:hover {
+  background-color: #2f2f2f;
+}
+
+/* Dark mode lunar date override */
+[light-mode=dark] .cell .lunar {
+  color: #ffd27f;   /* warm gold for good contrast */
+  font-weight: bold; /* slightly bolder for readability */
+}
+
+[light-mode=dark] #calendar td.uposatha {
+  background-color: #444 !important;
+  color: #ffd27f;
+  border-bottom: 1px solid #ffd27f;
+}
+[light-mode=dark] #calendar td.uposatha .lunar {
+  color: #ffd27f;   /* bright gold to match the cell highlight */
+  font-weight: 600; /* optional: make it stand out */
+}
+
+
+[light-mode=dark] #calendar td.today {
+  background-color: #555 !important;
+  color: #9fd3ff;
+  border-bottom: 1px solid #9fd3ff;  
+}
+
+[light-mode=dark] #calendar td.today .lunar {
+  background-color: #555 !important;
+  color: #9fd3ff;
+}
+[light-mode=dark] .legend {
+  color: #ddd;
+}
+
+[light-mode=dark] .legend span {
+  border: 1px solid #666;
+}
+
+[light-mode=dark] .legend .uposatha {
+  background-color: #444;
+  color: #ffd27f;
+}
+
+[light-mode=dark] .legend .today {
+  background-color: #555;
+  color: #9fd3ff;
+}
+/* Base styling for the lunar phases */
+.moon::after {
+  content: "";
+  display: inline-block;
+  width: 1em; 
+  height: 1em; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0.25em; 
+  vertical-align: middle;
+}
+
+/* New Weather Icons Styling */
+.lunar i.wi {
+  margin-left: 3px;
+  font-size: 1em;      /* Adjust size of the moon */
+  line-height: 1;
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+}
+
+/* Ensure icons inherit the color of the text (Gold in dark, Brown in light) */
+.lunar {
+  display: inline-flex;  /* Keeps text and moon aligned */
+  align-items: center;
+}
+
+	  
+.today-btn {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  background: #7b5e57;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.today-btn:hover {
+  background: #5c443f;
+}
+
+/* Dark mode override */
+[light-mode=dark] .today-btn {
+  background: #444;
+  color: #ffd27f;
+}
+
+[light-mode=dark] .today-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.toda-btn {
+  padding: 6px 6px;
+  border: none;
+  background: #7b5e57;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toda-btn:hover {
+  background: #5c443f;
+}
+
+/* Dark mode override */
+[light-mode=dark] .toda-btn {
+  background: #444;
+  color: #ffd27f;
+}
+
+[light-mode=dark] .toda-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+
+#calendar td.next-uposatha {
+  position: relative;
+  background-color: linear-gradient(135deg, #cce5ff, #e6f2ff);
+  color: inherit;
+  font-weight: bold;
+  border-radius: inherit;
+  z-index: 1;
+  background: linear-gradient(135deg, #cce5ff, #e6f2ff); /* xanh nhạt */
+}
+
+#calendar td.next-uposatha::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  border-radius: inherit;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(100, 180, 255, 0.6);
+  animation: ringPulse 2s infinite;
+}
+
+@keyframes ringPulse {
+  0% { box-shadow: 0 0 0 0 rgba(100, 180, 255, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(100, 180, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(100, 180, 255, 0); }
+}
+
+
+[light-mode=dark] #calendar td.next-uposatha {
+  background: linear-gradient(135deg, #1a2a3a, #0f1a26);
+  color: inherit;
+  font-weight: bold;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+[light-mode="dark"] .wi-moon-alt-full:before {
+  content: "\f0eb"; font-weight: normal
+}
+
+[light-mode="dark"] .wi-moon-alt-new:before {
+  content: "\f0dd"; font-weight: normal
+}
+
+[light-mode="dark"] .wi-moon-alt-first-quarter:before {
+  content: "\f0e4"; font-weight: normal
+}
+
+[light-mode="dark"] .wi-moon-alt-third-quarter:before {
+  content: "\f0d6"; font-weight: normal
+}
+
+[light-mode="light"] .lunar i.wi {
+  font-weight: bold;
+}
+
+  [light-mode="dark"] #phapcu-modal > div { background:#1e1e1e !important; color:#e0e0e0 !important; }
+  [light-mode="dark"] #phapcu-modal button { color:#ffd27f !important; }
+  [light-mode="dark"] #phapcu-content a { color:#ffd27f !important; }
+ 
